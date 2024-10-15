@@ -17,7 +17,9 @@ proc execute_command {cert} {
   send -- "$env(VPN_PASS)\n"
   send_user -- "\n"
 
-  log_user 0 
+  log_user 0
+
+  expect -exact "INFO:   Connected to gateway."
 
   expect {
     "ERROR:  Gateway certificate validation failed" {

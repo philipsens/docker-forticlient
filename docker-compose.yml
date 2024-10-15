@@ -2,6 +2,9 @@ version: "2.3"
 services:
   vpn:
     image: poyaz/forticlient:latest
+    build:
+      context: ./docker/images/forticlient
+      dockerfile: Dockerfile
     network_mode: bridge
     devices:
       - /dev/net/tun:/dev/net/tun
